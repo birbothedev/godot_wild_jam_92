@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dot46ksdp0c4v"]
+
+[ext_resource type="Script" uid="uid://cr7oe62jfjf52" path="res://scenes/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://dstg32ye6grwe" path="res://assets/icon.svg" id="2_qhqgy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
+size = Vector2(128, 128)
+
+[node name="Player" type="CharacterBody2D" unique_id=292756001]
+script = ExtResource("1_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1043534813]
+texture = ExtResource("2_qhqgy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1150206052]
+shape = SubResource("RectangleShape2D_jyhfs")
+
+[node name="SQ Firing Position" type="Node2D" parent="." unique_id=1888904493]
+position = Vector2(107, 0)
