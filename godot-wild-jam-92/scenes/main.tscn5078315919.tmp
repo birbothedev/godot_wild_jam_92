@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://bwho3bu6kutw8"]
+
+[ext_resource type="PackedScene" uid="uid://dot46ksdp0c4v" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://jetpq8uawden" path="res://scenes/patron.tscn" id="2_sugp2"]
+[ext_resource type="PackedScene" uid="uid://blvn7k0xgih6s" path="res://scenes/patron_spawner.tscn" id="3_jyhfs"]
+
+[node name="Main" type="Node2D" unique_id=233689032]
+
+[node name="Player" parent="." unique_id=292756001 instance=ExtResource("1_o5qli")]
+position = Vector2(1502, 355)
+
+[node name="Wander Markers" type="Node2D" parent="." unique_id=582167706]
+
+[node name="Marker2D3" type="Marker2D" parent="Wander Markers" unique_id=191243546 groups=["reg_patrons"]]
+position = Vector2(768, 174)
+
+[node name="Marker2D4" type="Marker2D" parent="Wander Markers" unique_id=1364205350 groups=["reg_patrons"]]
+position = Vector2(176, 903)
+
+[node name="Marker2D2" type="Marker2D" parent="Wander Markers" unique_id=1147173418 groups=["reg_patrons"]]
+position = Vector2(372, 590)
+
+[node name="Marker2D5" type="Marker2D" parent="Wander Markers" unique_id=1060551566 groups=["reg_patrons"]]
+position = Vector2(1531, 868)
+
+[node name="Marker2D6" type="Marker2D" parent="Wander Markers" unique_id=1017879082 groups=["reg_patrons"]]
+position = Vector2(1531, 868)
+
+[node name="Marker2D" type="Marker2D" parent="Wander Markers" unique_id=2024000547 groups=["reg_patrons"]]
+position = Vector2(930, 619)
+
+[node name="Patron Handler" type="Node2D" parent="." unique_id=525457291]
+position = Vector2(606, 664)
+
+[node name="Patron" parent="Patron Handler" unique_id=860337880 instance=ExtResource("2_sugp2")]
+position = Vector2(-405, -227)
+
+[node name="Patron Spawner" parent="." unique_id=1477667712 instance=ExtResource("3_jyhfs")]
+position = Vector2(769, 921)
+
+[node name="Label" type="Label" parent="." unique_id=1967482129]
+offset_left = 898.0
+offset_top = 1015.0
+offset_right = 1349.0
+offset_bottom = 1126.0
+theme_override_font_sizes/font_size = 39
+text = "text here
+"
+
+[node name="Label2" type="Label" parent="." unique_id=71987334]
+offset_left = 757.0
+offset_top = 901.0
+offset_right = 797.0
+offset_bottom = 947.0
+theme_override_font_sizes/font_size = 33
+text = "x"
+
+[node name="Label3" type="Label" parent="." unique_id=1668111264]
+offset_left = 599.0
+offset_top = 644.0
+offset_right = 639.0
+offset_bottom = 690.0
+theme_override_font_sizes/font_size = 33
+text = "x"
+
+[node name="Label4" type="Label" parent="." unique_id=520653107]
+offset_left = 363.0
+offset_top = 564.0
+offset_right = 403.0
+offset_bottom = 610.0
+theme_override_font_sizes/font_size = 33
+text = "x"
+
+[node name="Label8" type="Label" parent="." unique_id=1769661123]
+offset_left = 760.0
+offset_top = 149.0
+offset_right = 800.0
+offset_bottom = 195.0
+theme_override_font_sizes/font_size = 33
+text = "x"
+
+[node name="Label5" type="Label" parent="." unique_id=924244054]
+offset_left = 167.0
+offset_top = 873.0
+offset_right = 207.0
+offset_bottom = 919.0
+theme_override_font_sizes/font_size = 33
+text = "x"
+
+[node name="Label6" type="Label" parent="." unique_id=1865444079]
+offset_left = 922.0
+offset_top = 585.0
+offset_right = 962.0
+offset_bottom = 631.0
+theme_override_font_sizes/font_size = 33
+text = "x"
+
+[node name="Label7" type="Label" parent="." unique_id=1901036719]
+offset_left = 1523.0
+offset_top = 844.0
+offset_right = 1563.0
+offset_bottom = 890.0
+theme_override_font_sizes/font_size = 33
+text = "x"

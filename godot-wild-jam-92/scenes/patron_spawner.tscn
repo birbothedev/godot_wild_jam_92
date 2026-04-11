@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://blvn7k0xgih6s"]
+
+[ext_resource type="Script" uid="uid://dnfl46sdje3d3" path="res://scripts/patron_spawner.gd" id="1_ef83q"]
+
+[node name="Patron Spawner" type="Node2D" unique_id=1477667712]
+script = ExtResource("1_ef83q")
+
+[node name="Timer" type="Timer" parent="." unique_id=305856862]
+autostart = true
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=623480176]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://jur7df3ho531"]
+
+[ext_resource type="Script" uid="uid://bd7ariwjrigl3" path="res://patron_wandering.gd" id="1_xklne"]
+
+[node name="Patron Wandering" type="Node2D" unique_id=218735438]
+script = ExtResource("1_xklne")
+
+[node name="Idle Timer" type="Timer" parent="." unique_id=1273671570]

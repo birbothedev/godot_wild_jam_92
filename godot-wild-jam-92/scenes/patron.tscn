@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://jetpq8uawden"]
+
+[ext_resource type="Script" uid="uid://c33ohjgfchnqp" path="res://scripts/patron.gd" id="1_2v2r5"]
+[ext_resource type="Texture2D" uid="uid://dstg32ye6grwe" path="res://assets/icon.svg" id="1_g6cmi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hx3gv"]
+size = Vector2(18, 26)
+
+[node name="Patron" type="CharacterBody2D" unique_id=860337880]
+script = ExtResource("1_2v2r5")
+
+[node name="Patron Image" type="Sprite2D" parent="." unique_id=1905038066]
+position = Vector2(7.1525574e-07, 0)
+scale = Vector2(0.1328125, 0.203125)
+texture = ExtResource("1_g6cmi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1392047417]
+shape = SubResource("RectangleShape2D_hx3gv")
+
+[node name="DirectionTimer" type="Timer" parent="." unique_id=807293815]

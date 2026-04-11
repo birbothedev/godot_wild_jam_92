@@ -7,12 +7,7 @@
 [node name="Main" type="Node2D" unique_id=233689032]
 
 [node name="Player" parent="." unique_id=292756001 instance=ExtResource("1_o5qli")]
-position = Vector2(1448, 416)
-
-[node name="Patron Handler" type="Node2D" parent="." unique_id=1507501221]
-
-[node name="Patron" parent="Patron Handler" unique_id=860337880 instance=ExtResource("2_sugp2")]
-position = Vector2(201, 437)
+position = Vector2(1502, 355)
 
 [node name="Patron Spawner" parent="." unique_id=1477667712 instance=ExtResource("3_jyhfs")]
 position = Vector2(769, 921)
@@ -24,3 +19,6 @@ offset_right = 797.0
 offset_bottom = 947.0
 theme_override_font_sizes/font_size = 33
 text = "x"
+
+[node name="Patron" parent="." unique_id=860337880 instance=ExtResource("2_sugp2")]
+position = Vector2(201, 437)
