@@ -29,6 +29,7 @@ window/size/mode=3
 
 reg_patrons=""
 patrons=""
+berry_spawns=""
 
 [input]
 
@@ -70,6 +71,7 @@ down={
 2d_physics/layer_3="bar"
 2d_physics/layer_5="cars"
 2d_physics/layer_8="juice"
+2d_physics/layer_10="berry"
 
 [physics]
 

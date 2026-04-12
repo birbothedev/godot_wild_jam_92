@@ -11,6 +11,7 @@ func _ready() -> void:
 		update_ammo_progress_bar()
 	GameManager.rep_counter_label = $"Label7/Rep Counter"
 	GameManager.money_counter_label = $"Label8/Money Counter"
+	GameManager.berry_count_label = $"Label9/Berry Counter"
 	GameManager.init_ui()
 
 func update_ammo_progress_bar():

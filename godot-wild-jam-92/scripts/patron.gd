@@ -28,16 +28,14 @@ func _physics_process(_delta):
 		queue_free()
 
 func get_random_target_position():
-	# get the first position in the array and delete it
 	var marker = patron_target_locations.pick_random()
 	target_position = marker.global_position
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	GameManager.remove_reputation_from_bar()
+	GameManager.change_bar_reputation(-1)
 	queue_free()
 
 func _on_juice_detection_body_entered(body: Node2D) -> void:
-	print("hit with juice")
 	hit_with_juice = true
 	apply_knockback(body.get_parent().global_position, 150.0)
 	body.queue_free()

@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://d3x53d0p45k4b" path="res://scenes/bar.tscn" id="4_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://cm7dodhewchof" path="res://assets/spritesheet.png" id="6_tefeu"]
 [ext_resource type="Texture2D" uid="uid://cnf0eqwg8s884" path="res://assets/parking lot.png" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://b8oew86f2nd8s" path="res://scenes/boost_berry.tscn" id="8_tipki"]
+[ext_resource type="PackedScene" uid="uid://chte2gaqpeefn" path="res://scenes/berry_spawner.tscn" id="9_85g3d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o6xl0"]
 texture = ExtResource("6_tefeu")
@@ -625,3 +627,49 @@ z_index = -5
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("7_o6xl0")
+
+[node name="Berry Spawn Points" type="Node2D" parent="." unique_id=988133223]
+
+[node name="Marker2D" type="Marker2D" parent="Berry Spawn Points" unique_id=491282892 groups=["berry_spawns"]]
+position = Vector2(962, 461)
+
+[node name="Marker2D2" type="Marker2D" parent="Berry Spawn Points" unique_id=1461692449 groups=["berry_spawns"]]
+position = Vector2(1369, 295)
+
+[node name="Marker2D3" type="Marker2D" parent="Berry Spawn Points" unique_id=117249255 groups=["berry_spawns"]]
+position = Vector2(635, 89)
+
+[node name="Marker2D4" type="Marker2D" parent="Berry Spawn Points" unique_id=1714973589 groups=["berry_spawns"]]
+position = Vector2(174, 535)
+
+[node name="Marker2D5" type="Marker2D" parent="Berry Spawn Points" unique_id=1079805449 groups=["berry_spawns"]]
+position = Vector2(913, 626)
+
+[node name="Marker2D6" type="Marker2D" parent="Berry Spawn Points" unique_id=1358920129 groups=["berry_spawns"]]
+position = Vector2(1803, 987)
+
+[node name="Marker2D7" type="Marker2D" parent="Berry Spawn Points" unique_id=1725944775 groups=["berry_spawns"]]
+position = Vector2(392, 927)
+
+[node name="Marker2D8" type="Marker2D" parent="Berry Spawn Points" unique_id=1797553903 groups=["berry_spawns"]]
+position = Vector2(1782, 206)
+
+[node name="Marker2D9" type="Marker2D" parent="Berry Spawn Points" unique_id=1848362988 groups=["berry_spawns"]]
+position = Vector2(109, 958)
+
+[node name="Marker2D10" type="Marker2D" parent="Berry Spawn Points" unique_id=92239408 groups=["berry_spawns"]]
+position = Vector2(1421, 68)
+
+[node name="Marker2D11" type="Marker2D" parent="Berry Spawn Points" unique_id=276855333 groups=["berry_spawns"]]
+position = Vector2(1507, 592)
+
+[node name="Marker2D12" type="Marker2D" parent="Berry Spawn Points" unique_id=726508968 groups=["berry_spawns"]]
+position = Vector2(1647, 359)
+
+[node name="Berry Handler" type="Node2D" parent="." unique_id=452461431]
+position = Vector2(0, 1)
+
+[node name="Boost Berry" parent="Berry Handler" unique_id=656670526 instance=ExtResource("8_tipki")]
+position = Vector2(529, 246)
+
+[node name="Berry Spawner" parent="." unique_id=1340468472 instance=ExtResource("9_85g3d")]

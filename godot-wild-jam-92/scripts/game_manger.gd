@@ -7,9 +7,11 @@ var start_game_screen = preload("res://scenes/start_menu.tscn")
 
 var rep_counter_label
 var money_counter_label
+var berry_count_label
 
 var bar_reputation_value = 100
 var bar_money_value = 0
+var player_berry_count = 0
 
 var game_paused_for_buying = false
 
@@ -28,14 +30,21 @@ func init_ui():
 
 	if money_counter_label:
 		money_counter_label.text = str(bar_money_value)
+	
+	if berry_count_label:
+		berry_count_label.text = str(player_berry_count)
 
-func remove_reputation_from_bar():
-	bar_reputation_value -= 1
+func change_bar_reputation(amount):
+	bar_reputation_value += amount
 	rep_counter_label.text = str(bar_reputation_value)
 
-func add_money_to_bar():
-	bar_money_value += 1
+func change_bar_money_amount(amount):
+	bar_money_value += amount
 	money_counter_label.text = str(bar_money_value)
+
+func change_player_berry_count(amount):
+	player_berry_count += amount
+	berry_count_label.text = str(player_berry_count)
 
 func go_to_buy_screen():
 	get_tree().change_scene_to_packed(buy_screen)

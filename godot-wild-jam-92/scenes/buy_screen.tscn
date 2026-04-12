@@ -10,10 +10,10 @@ script = ExtResource("1_wxbv8")
 position = Vector2(-4, 3)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=969522087]
-offset_left = 392.0
-offset_top = 213.0
-offset_right = 560.0
-offset_bottom = 253.0
+offset_left = 893.0
+offset_top = 540.0
+offset_right = 1061.0
+offset_bottom = 580.0
 text = "buy stuff"
 
 [node name="Return" type="Button" parent="." unique_id=1366858081]
