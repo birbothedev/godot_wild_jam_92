@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://brky53xmjwmn4"]
+
+[ext_resource type="Script" uid="uid://c0rd1ehymtyip" path="res://scripts/in_game_timer.gd" id="1_1r73o"]
+
+[node name="Day Tracker" type="Control" unique_id=1185845853]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1077465486]
+layout_mode = 0
+offset_right = 292.0
+offset_bottom = 40.0
+theme_override_font_sizes/normal_font_size = 20
+text = "Day 1, 00:00"
+script = ExtResource("1_1r73o")

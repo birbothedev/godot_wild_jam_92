@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b8oew86f2nd8s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yapxj"]
+
+[node name="Boost Berry" type="Area2D" unique_id=656670526]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=619629232]
+shape = SubResource("CircleShape2D_yapxj")

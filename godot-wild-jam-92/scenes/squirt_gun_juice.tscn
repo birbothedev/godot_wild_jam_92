@@ -4,17 +4,18 @@
 [ext_resource type="Script" uid="uid://b6t2dk8esui3d" path="res://scripts/squirt_gun_juice.gd" id="1_o116x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o116x"]
-size = Vector2(46, 38.4)
+size = Vector2(20, 38.4)
 
-[node name="Squirt Gun Juice" type="CharacterBody2D" unique_id=1881582986]
+[node name="Juice" type="CharacterBody2D" unique_id=904999698]
+collision_layer = 128
 script = ExtResource("1_o116x")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2125766651]
 position = Vector2(0, -2.3841858e-07)
-scale = Vector2(0.359375, 0.046875)
+scale = Vector2(0.15625, 0.046875)
 texture = ExtResource("1_lhtnj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1411560655]
-position = Vector2(0, 4.7683716e-07)
+position = Vector2(0, -4.7683716e-07)
 scale = Vector2(1, 0.15625)
 shape = SubResource("RectangleShape2D_o116x")

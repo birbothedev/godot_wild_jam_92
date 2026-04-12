@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://61nijdee4hqi"]
+
+[node name="Game Over" type="Node2D" unique_id=1006260259]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=871339198]
+offset_left = 392.0
+offset_top = 213.0
+offset_right = 560.0
+offset_bottom = 253.0
+text = "GAME OBER"

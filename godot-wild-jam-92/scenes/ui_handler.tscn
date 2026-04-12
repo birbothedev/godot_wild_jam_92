@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://di7j0npd38j1x"]
+
+[ext_resource type="Script" uid="uid://cngp2oqofqmn2" path="res://scripts/ui_handler.gd" id="1_iw0cq"]
+[ext_resource type="PackedScene" uid="uid://brky53xmjwmn4" path="res://scenes/day_tracker.tscn" id="3_0lcql"]
+
+[node name="UI Handler" type="Node2D" unique_id=1313743795]
+script = ExtResource("1_iw0cq")
+
+[node name="Label7" type="Label" parent="." unique_id=870538998]
+offset_left = 59.0
+offset_top = 46.0
+offset_right = 323.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 33
+text = "Bar Reputation: "
+
+[node name="Rep Counter" type="Label" parent="Label7" unique_id=1585886716]
+layout_mode = 0
+offset_left = 261.0
+offset_right = 318.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 33
+
+[node name="Label8" type="Label" parent="." unique_id=1322541875]
+offset_left = 57.0
+offset_top = 90.0
+offset_right = 321.0
+offset_bottom = 136.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 33
+text = "Bar Money: "
+
+[node name="Money Counter" type="Label" parent="Label8" unique_id=1371277209]
+layout_mode = 0
+offset_left = 189.0
+offset_right = 247.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 33
+text = "$ 0"
+
+[node name="Ammo Tracker" type="ProgressBar" parent="." unique_id=956917703]
+offset_left = 1565.0
+offset_top = 97.0
+offset_right = 1810.0
+offset_bottom = 124.0
+max_value = 10.0
+step = 1.0
+rounded = true
+show_percentage = false
+
+[node name="Day Tracker" parent="." unique_id=1185845853 instance=ExtResource("3_0lcql")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 915.0
+offset_top = 70.0
+offset_right = 1037.0
+offset_bottom = 70.0
+grow_horizontal = 1
+grow_vertical = 1

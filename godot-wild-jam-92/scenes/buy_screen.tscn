@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c2nl0tmx8nje0"]
+
+[ext_resource type="PackedScene" uid="uid://di7j0npd38j1x" path="res://scenes/ui_handler.tscn" id="1_5h1mi"]
+[ext_resource type="Script" uid="uid://cgrbt0rjt7mn0" path="res://scripts/buy_screen.gd" id="1_wxbv8"]
+
+[node name="Buy Screen" type="Node2D" unique_id=538934202]
+script = ExtResource("1_wxbv8")
+
+[node name="UI Handler" parent="." unique_id=1313743795 instance=ExtResource("1_5h1mi")]
+position = Vector2(-4, 3)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=969522087]
+offset_left = 392.0
+offset_top = 213.0
+offset_right = 560.0
+offset_bottom = 253.0
+text = "buy stuff"
+
+[node name="Return" type="Button" parent="." unique_id=1366858081]
+offset_left = 1691.0
+offset_top = 962.0
+offset_right = 1834.0
+offset_bottom = 1006.0
+text = "return to game"
+
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="Return" to="." method="_on_button_pressed"]
