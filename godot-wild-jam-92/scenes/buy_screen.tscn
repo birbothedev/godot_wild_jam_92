@@ -23,5 +23,5 @@ offset_right = 1834.0
 offset_bottom = 1006.0
 text = "return to game"
 
-[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="Return" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]

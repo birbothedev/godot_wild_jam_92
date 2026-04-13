@@ -6,9 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://blvn7k0xgih6s" path="res://scenes/patron_spawner.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://d3x53d0p45k4b" path="res://scenes/bar.tscn" id="4_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://cm7dodhewchof" path="res://assets/spritesheet.png" id="6_tefeu"]
-[ext_resource type="Texture2D" uid="uid://cnf0eqwg8s884" path="res://assets/parking lot.png" id="7_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://ctu4o2k86783u" path="res://assets/parking lot.png" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://b8oew86f2nd8s" path="res://scenes/boost_berry.tscn" id="8_tipki"]
 [ext_resource type="PackedScene" uid="uid://chte2gaqpeefn" path="res://scenes/berry_spawner.tscn" id="9_85g3d"]
+[ext_resource type="PackedScene" uid="uid://cxunw8v30ukoi" path="res://scenes/pause_menu.tscn" id="10_choun"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o6xl0"]
 texture = ExtResource("6_tefeu")
@@ -544,6 +545,12 @@ sources/1 = SubResource("TileSetAtlasSource_o6xl0")
 
 [node name="Main" type="Node2D" unique_id=233689032]
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=749984149]
+z_index = -5
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("7_o6xl0")
+
 [node name="UI Handler" parent="." unique_id=1313743795 instance=ExtResource("1_tbgi4")]
 z_index = 5
 
@@ -553,10 +560,10 @@ position = Vector2(1448, 416)
 [node name="Patron Handler" type="Node2D" parent="." unique_id=1507501221]
 
 [node name="Patron" parent="Patron Handler" unique_id=860337880 groups=["patrons"] instance=ExtResource("2_sugp2")]
-position = Vector2(987, 878)
+position = Vector2(952, 254)
 
 [node name="Patron Spawner" parent="." unique_id=1477667712 instance=ExtResource("3_jyhfs")]
-position = Vector2(986, 877)
+position = Vector2(956, 286)
 
 [node name="Wander Points" type="Node2D" parent="." unique_id=654370566]
 
@@ -564,13 +571,13 @@ position = Vector2(986, 877)
 position = Vector2(319, 731)
 
 [node name="Marker2D5" type="Marker2D" parent="Wander Points" unique_id=280494784 groups=["reg_patrons"]]
-position = Vector2(387, 135)
+position = Vector2(1094, 975)
 
 [node name="Marker2D9" type="Marker2D" parent="Wander Points" unique_id=1357374689 groups=["reg_patrons"]]
-position = Vector2(313, -103)
+position = Vector2(379, 1144)
 
 [node name="Marker2D10" type="Marker2D" parent="Wander Points" unique_id=1886062037 groups=["reg_patrons"]]
-position = Vector2(-142, 354)
+position = Vector2(-151, 371)
 
 [node name="Marker2D11" type="Marker2D" parent="Wander Points" unique_id=1202543312 groups=["reg_patrons"]]
 position = Vector2(-151, 745)
@@ -582,16 +589,16 @@ position = Vector2(2049, 874)
 position = Vector2(2070, 391)
 
 [node name="Marker2D16" type="Marker2D" parent="Wander Points" unique_id=2065627125 groups=["reg_patrons"]]
-position = Vector2(879, -113)
+position = Vector2(953, 1194)
 
 [node name="Marker2D17" type="Marker2D" parent="Wander Points" unique_id=403143281 groups=["reg_patrons"]]
-position = Vector2(1442, -110)
+position = Vector2(1559, 1145)
 
 [node name="Marker2D6" type="Marker2D" parent="Wander Points" unique_id=1201654365 groups=["reg_patrons"]]
-position = Vector2(870, 108)
+position = Vector2(373, 508)
 
 [node name="Marker2D7" type="Marker2D" parent="Wander Points" unique_id=1805751631 groups=["reg_patrons"]]
-position = Vector2(1319, 147)
+position = Vector2(1450, 992)
 
 [node name="Marker2D8" type="Marker2D" parent="Wander Points" unique_id=1357527095 groups=["reg_patrons"]]
 position = Vector2(1841, 577)
@@ -600,33 +607,27 @@ position = Vector2(1841, 577)
 position = Vector2(614, 433)
 
 [node name="Marker2D3" type="Marker2D" parent="Wander Points" unique_id=2120071192 groups=["reg_patrons"]]
-position = Vector2(1068, 370)
+position = Vector2(1279, 695)
 
 [node name="Marker2D4" type="Marker2D" parent="Wander Points" unique_id=1515937233 groups=["reg_patrons"]]
-position = Vector2(1211, 697)
+position = Vector2(677, 851)
 
 [node name="Label2" type="Label" parent="Wander Points" unique_id=71987334]
-offset_left = 975.0
-offset_top = 854.0
-offset_right = 1015.0
-offset_bottom = 900.0
+offset_left = 942.0
+offset_top = 230.0
+offset_right = 982.0
+offset_bottom = 276.0
 theme_override_colors/font_color = Color(1, 0.1882353, 1, 1)
 theme_override_font_sizes/font_size = 33
 text = "x"
 
 [node name="Bar" parent="." unique_id=2136406632 instance=ExtResource("4_jyhfs")]
-position = Vector2(981, 978)
+position = Vector2(965, 118)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=752915099]
 scale = Vector2(1.5, 1.5)
-tile_map_data = PackedByteArray("AAAeAAgAAQABAAAAAAAeAAkAAQABAAEAAAAeAAoAAQABAAIAAAAeAAsAAQABAAMAAAAfAAgAAQACAAAAAAAfAAkAAQACAAEAAAAfAAoAAQACAAIAAAAfAAsAAQACAAMAAAAtAAQAAQAJAAQAAGAtAAMAAQAKAAQAAGAuAAQAAQAJAAUAAGAuAAMAAQAKAAUAAGAvAAQAAQAJAAYAAGAvAAMAAQAKAAYAAGAwAAQAAQAJAAcAAGAwAAMAAQAKAAcAAGALABwAAQAJAAgAAAALAB0AAQAJAAkAAAALAB4AAQAJAAoAAAALAB8AAQAJAAsAAAAMABwAAQAKAAgAAAAMAB0AAQAKAAkAAAAMAB4AAQAKAAoAAAAMAB8AAQAKAAsAAAAFAA0AAQARAAgAAAAFAA4AAQARAAkAAAAFAA8AAQARAAoAAAAFABAAAQARAAsAAAAGAA0AAQASAAgAAAAGAA4AAQASAAkAAAAGAA8AAQASAAoAAAAGABAAAQASAAsAAAA6ACIAAQARAAgAAFA6ACMAAQASAAgAAFA5ACIAAQARAAkAAFA5ACMAAQASAAkAAFA4ACIAAQARAAoAAFA4ACMAAQASAAoAAFA3ACIAAQARAAsAAFA3ACMAAQASAAsAAFARACwAAQAIAAwAAGARACsAAQAJAAwAAGARACoAAQAKAAwAAGARACkAAQALAAwAAGASACwAAQAIAA0AAGASACsAAQAJAA0AAGASACoAAQAKAA0AAGASACkAAQALAA0AAGATACwAAQAIAA4AAGATACsAAQAJAA4AAGATACoAAQAKAA4AAGATACkAAQALAA4AAGAUACwAAQAIAA8AAGAUACsAAQAJAA8AAGAUACoAAQAKAA8AAGAUACkAAQALAA8AAGAVACwAAQAAABQAAGAVACsAAQABABQAAGAVACoAAQACABQAAGAVACkAAQADABQAAGAWACwAAQAAABUAAGAWACsAAQABABUAAGAWACoAAQACABUAAGAWACkAAQADABUAAGAXACwAAQAAABYAAGAXACsAAQABABYAAGAXACoAAQACABYAAGAXACkAAQADABYAAGAYACwAAQAAABcAAGAYACsAAQABABcAAGAYACoAAQACABcAAGAYACkAAQADABcAAGAZACwAAQAAABgAAGAZACsAAQABABgAAGAZACoAAQACABgAAGAZACkAAQADABgAAGAaACwAAQAAABkAAGAaACsAAQABABkAAGAaACoAAQACABkAAGAaACkAAQADABkAAGAbACwAAQAAABoAAGAbACsAAQABABoAAGAbACoAAQACABoAAGAbACkAAQADABoAAGAcACwAAQAAABsAAGAcACsAAQABABsAAGAcACoAAQACABsAAGAcACkAAQADABsAAGBDABcAAQANAAwAAABDABgAAQANAA0AAABDABkAAQANAA4AAABDABoAAQANAA8AAABEABcAAQAOAAwAAABEABgAAQAOAA0AAABEABkAAQAOAA4AAABEABoAAQAOAA8AAAARAA0AAQANAAgAAAARAA4AAQANAAkAAAARAA8AAQANAAoAAAARABAAAQANAAsAAAASAA0AAQAOAAgAAAASAA4AAQAOAAkAAAASAA8AAQAOAAoAAAASABAAAQAOAAsAAAA4ABcAAQAFAAAAAAA4ABgAAQAFAAEAAAA4ABkAAQAFAAIAAAA4ABoAAQAFAAMAAAA5ABcAAQAGAAAAAAA5ABgAAQAGAAEAAAA5ABkAAQAGAAIAAAA5ABoAAQAGAAMAAAA=")
+tile_map_data = PackedByteArray("AAA0AAMAAQAIAAwAAGA0AAIAAQAJAAwAAGA0AAEAAQAKAAwAAGA0AAAAAQALAAwAAGA1AAMAAQAIAA0AAGA1AAIAAQAJAA0AAGA1AAEAAQAKAA0AAGA1AAAAAQALAA0AAGA2AAMAAQAIAA4AAGA2AAIAAQAJAA4AAGA2AAEAAQAKAA4AAGA2AAAAAQALAA4AAGA3AAMAAQAIAA8AAGA3AAIAAQAJAA8AAGA3AAEAAQAKAA8AAGA3AAAAAQALAA8AAGA4AAMAAQAAABQAAGA4AAIAAQABABQAAGA4AAEAAQACABQAAGA4AAAAAQADABQAAGA5AAMAAQAAABUAAGA5AAIAAQABABUAAGA5AAEAAQACABUAAGA5AAAAAQADABUAAGA6AAMAAQAAABYAAGA6AAIAAQABABYAAGA6AAEAAQACABYAAGA6AAAAAQADABYAAGA7AAMAAQAAABcAAGA7AAIAAQABABcAAGA7AAEAAQACABcAAGA7AAAAAQADABcAAGA8AAMAAQAAABgAAGA8AAIAAQABABgAAGA8AAEAAQACABgAAGA8AAAAAQADABgAAGA9AAMAAQAAABkAAGA9AAIAAQABABkAAGA9AAEAAQACABkAAGA9AAAAAQADABkAAGA+AAMAAQAAABoAAGA+AAIAAQABABoAAGA+AAEAAQACABoAAGA+AAAAAQADABoAAGA/AAMAAQAAABsAAGA/AAIAAQABABsAAGA/AAEAAQACABsAAGA/AAAAAQADABsAAGA0ABMAAQANAAwAAAA0ABQAAQANAA0AAAA0ABUAAQANAA4AAAA0ABYAAQANAA8AAAA1ABMAAQAOAAwAAAA1ABQAAQAOAA0AAAA1ABUAAQAOAA4AAAA1ABYAAQAOAA8AAAALACIAAQANAAwAAAALACMAAQANAA0AAAALACQAAQANAA4AAAALACUAAQANAA8AAAAMACIAAQAOAAwAAAAMACMAAQAOAA0AAAAMACQAAQAOAA4AAAAMACUAAQAOAA8AAAAHACEAAQAFAAgAAAAHACIAAQAFAAkAAAAHACMAAQAFAAoAAAAHACQAAQAFAAsAAAAIACEAAQAGAAgAAAAIACIAAQAGAAkAAAAIACMAAQAGAAoAAAAIACQAAQAGAAsAAAAwABkAAQAJAAQAAFAwABoAAQAKAAQAAFAvABkAAQAJAAUAAFAvABoAAQAKAAUAAFAuABkAAQAJAAYAAFAuABoAAQAKAAYAAFAtABkAAQAJAAcAAFAtABoAAQAKAAcAAFAJABEAAQACAAAAADAJABAAAQACAAEAADAJAA8AAQACAAIAADAJAA4AAQACAAMAADAKABEAAQABAAAAADAKABAAAQABAAEAADAKAA8AAQABAAIAADAKAA4AAQABAAMAADBLAB0AAQAJAAAAAABLAB4AAQAJAAEAAABLAB8AAQAJAAIAAABLACAAAQAJAAMAAABMAB0AAQAKAAAAAABMAB4AAQAKAAEAAABMAB8AAQAKAAIAAABMACAAAQAKAAMAAAAaACoAAQANAAQAAGAaACkAAQAOAAQAAGAbACoAAQANAAUAAGAbACkAAQAOAAUAAGAcACoAAQANAAYAAGAcACkAAQAOAAYAAGAdACoAAQANAAcAAGAdACkAAQAOAAcAAGA=")
 tile_set = SubResource("TileSet_tipki")
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=749984149]
-z_index = -5
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("7_o6xl0")
 
 [node name="Berry Spawn Points" type="Node2D" parent="." unique_id=988133223]
 
@@ -637,7 +638,7 @@ position = Vector2(962, 461)
 position = Vector2(1369, 295)
 
 [node name="Marker2D3" type="Marker2D" parent="Berry Spawn Points" unique_id=117249255 groups=["berry_spawns"]]
-position = Vector2(635, 89)
+position = Vector2(159, 266)
 
 [node name="Marker2D4" type="Marker2D" parent="Berry Spawn Points" unique_id=1714973589 groups=["berry_spawns"]]
 position = Vector2(174, 535)
@@ -658,7 +659,7 @@ position = Vector2(1782, 206)
 position = Vector2(109, 958)
 
 [node name="Marker2D10" type="Marker2D" parent="Berry Spawn Points" unique_id=92239408 groups=["berry_spawns"]]
-position = Vector2(1421, 68)
+position = Vector2(1022, 764)
 
 [node name="Marker2D11" type="Marker2D" parent="Berry Spawn Points" unique_id=276855333 groups=["berry_spawns"]]
 position = Vector2(1507, 592)
@@ -670,6 +671,11 @@ position = Vector2(1647, 359)
 position = Vector2(0, 1)
 
 [node name="Boost Berry" parent="Berry Handler" unique_id=656670526 instance=ExtResource("8_tipki")]
-position = Vector2(529, 246)
+position = Vector2(1650, 797)
 
 [node name="Berry Spawner" parent="." unique_id=1340468472 instance=ExtResource("9_85g3d")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1448312330]
+visible = false
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=39965167 instance=ExtResource("10_choun")]

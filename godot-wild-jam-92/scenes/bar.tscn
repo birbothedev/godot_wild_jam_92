@@ -1,28 +1,26 @@
 [gd_scene format=3 uid="uid://d3x53d0p45k4b"]
 
-[ext_resource type="Texture2D" uid="uid://dstg32ye6grwe" path="res://assets/icon.svg" id="1_5dekh"]
 [ext_resource type="Script" uid="uid://2bm2o453veir" path="res://scripts/bar.gd" id="1_bwlfd"]
+[ext_resource type="Texture2D" uid="uid://dt833gjn7b0nw" path="res://assets/bar.png" id="2_bwlfd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
-size = Vector2(372, 152)
+size = Vector2(329, 214)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5dekh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bwlfd"]
-size = Vector2(435, 192)
+size = Vector2(368, 242)
 
 [node name="Bar" type="Area2D" unique_id=2136406632]
 collision_layer = 4
 script = ExtResource("1_bwlfd")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=811056676]
-position = Vector2(1.5258789e-05, -1.0000019)
-scale = Vector2(3.4062498, 1.5)
-texture = ExtResource("1_5dekh")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=79616243]
+texture = ExtResource("2_bwlfd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=280977787]
 modulate = Color(1, 0.011764706, 1, 1)
-position = Vector2(2, 2)
+position = Vector2(8.5, -5)
 shape = SubResource("RectangleShape2D_sugp2")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=200600583]
@@ -31,7 +29,7 @@ collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_5dekh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1086322721]
-position = Vector2(-0.5, -1)
+position = Vector2(3, 2)
 shape = SubResource("RectangleShape2D_bwlfd")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

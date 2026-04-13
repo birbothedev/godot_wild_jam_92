@@ -26,6 +26,12 @@ func _physics_process(_delta):
 	
 	if GameManager.game_paused_for_buying:
 		queue_free()
+	
+	$AnimatedSprite2D.play("walk")
+	if velocity.x < 0:
+		$AnimatedSprite2D.flip_h = true
+	elif velocity.x > 0:
+		$AnimatedSprite2D.flip_h = false
 
 func get_random_target_position():
 	var marker = patron_target_locations.pick_random()

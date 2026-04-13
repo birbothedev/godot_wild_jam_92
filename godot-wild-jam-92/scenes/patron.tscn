@@ -1,24 +1,62 @@
 [gd_scene format=3 uid="uid://jetpq8uawden"]
 
 [ext_resource type="Script" uid="uid://c33ohjgfchnqp" path="res://scripts/patron.gd" id="1_2v2r5"]
-[ext_resource type="Texture2D" uid="uid://dstg32ye6grwe" path="res://assets/icon.svg" id="1_g6cmi"]
+[ext_resource type="Texture2D" uid="uid://cf4kehb2q6jgn" path="res://assets/walk animation.png" id="2_hx3gv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hx3gv"]
+atlas = ExtResource("2_hx3gv")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2v2r5"]
+atlas = ExtResource("2_hx3gv")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcn2m"]
+atlas = ExtResource("2_hx3gv")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6och0"]
+atlas = ExtResource("2_hx3gv")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1u83e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hx3gv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2v2r5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcn2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6och0")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hx3gv"]
-size = Vector2(50, 44)
+size = Vector2(22, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2v2r5"]
-size = Vector2(98, 96)
+size = Vector2(58, 78)
 
 [node name="Patron" type="CharacterBody2D" unique_id=860337880]
 collision_mask = 151
 script = ExtResource("1_2v2r5")
 
-[node name="Patron Image" type="Sprite2D" parent="." unique_id=1905038066]
-position = Vector2(1.9073486e-06, -9.536743e-07)
-scale = Vector2(0.39453128, 0.34375)
-texture = ExtResource("1_g6cmi")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=810181595]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_1u83e")
+animation = &"walk"
+frame_progress = 0.93667006
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1392047417]
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_hx3gv")
 
 [node name="DirectionTimer" type="Timer" parent="." unique_id=807293815]
