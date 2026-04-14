@@ -6,13 +6,19 @@ var MAX_AMMO_COUNT = 50
 var screen_size
 var sprite_size
 var ui_handler 
+var firing_position
 var juice_path = preload("res://scenes/squirt_gun_juice.tscn")
+var walking_audio
+var squirt_gun_audio
 
 func _ready() -> void:
 	reset_ammo_count()
+	walking_audio = $Walking
+	squirt_gun_audio = $"Squirt Noise"
 	ui_handler = $"../UI Handler"
 	screen_size = get_viewport_rect().size
 	sprite_size = $Sprite2D.texture.get_size()
+	firing_position = $"SQ Firing Position"
 
 func _physics_process(delta):
 	look_at(get_global_mouse_position())
@@ -37,7 +43,7 @@ func fire():
 	AMMO_COUNT -= 1
 	var juice = juice_path.instantiate()
 	juice.dir = rotation
-	juice.pos = $"SQ Firing Position".global_position
+	juice.pos = firing_position.global_position
 	juice.rot = global_rotation
 	get_parent().add_child(juice)
 

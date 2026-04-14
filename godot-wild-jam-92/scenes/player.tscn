@@ -20,4 +20,4 @@ texture = ExtResource("2_qhqgy")
 shape = SubResource("RectangleShape2D_jyhfs")
 
 [node name="SQ Firing Position" type="Node2D" parent="." unique_id=1888904493]
-position = Vector2(48, 0)
+position = Vector2(55, 0)

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://brky53xmjwmn4"]
 
 [ext_resource type="Script" uid="uid://c0rd1ehymtyip" path="res://scripts/in_game_timer.gd" id="1_1r73o"]
+[ext_resource type="FontFile" uid="uid://b6161qhhvxewv" path="res://assets/PixelifySans-VariableFont_wght.ttf" id="1_76dvx"]
 
 [node name="Day Tracker" type="Control" unique_id=1185845853]
 layout_mode = 3
@@ -12,8 +13,10 @@ grow_vertical = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1077465486]
 layout_mode = 0
-offset_right = 292.0
-offset_bottom = 40.0
-theme_override_font_sizes/normal_font_size = 20
+offset_right = 221.0
+offset_bottom = 42.0
+theme_override_fonts/normal_font = ExtResource("1_76dvx")
+theme_override_fonts/bold_font = ExtResource("1_76dvx")
+theme_override_font_sizes/normal_font_size = 30
 text = "Day 1, 00:00"
 script = ExtResource("1_1r73o")

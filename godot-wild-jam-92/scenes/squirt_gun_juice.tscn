@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dstg32ye6grwe" path="res://assets/icon.svg" id="1_lhtnj"]
 [ext_resource type="Script" uid="uid://b6t2dk8esui3d" path="res://scripts/squirt_gun_juice.gd" id="1_o116x"]
+[ext_resource type="AudioStream" uid="uid://cdxg2hwyooklq" path="res://assets/audio/419181__14gpanskahonc_petr__14-man-fast-walking-dirt.wav" id="3_j4a7w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o116x"]
 size = Vector2(20, 38.4)
@@ -19,3 +20,7 @@ texture = ExtResource("1_lhtnj")
 position = Vector2(0, -4.7683716e-07)
 scale = Vector2(1, 0.15625)
 shape = SubResource("RectangleShape2D_o116x")
+
+[node name="Squirt Noise" type="AudioStreamPlayer2D" parent="." unique_id=1800299330]
+stream = ExtResource("3_j4a7w")
+autoplay = true

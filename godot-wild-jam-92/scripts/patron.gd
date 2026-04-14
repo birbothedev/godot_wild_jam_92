@@ -6,8 +6,10 @@ var patron_target_locations
 var temp_positions_array
 var current_position
 var hit_with_juice = false
+var player
 
 func _ready():
+	player = $"../../Player"
 	patron_target_locations = get_tree().get_nodes_in_group("reg_patrons")
 	get_random_target_position()
 	
@@ -43,7 +45,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 func _on_juice_detection_body_entered(body: Node2D) -> void:
 	hit_with_juice = true
-	apply_knockback(body.get_parent().global_position, 150.0)
+	apply_knockback(player.global_position, 100.0)
 	body.queue_free()
 
 # Inside the enemy script (e.g., CharacterBody2D)

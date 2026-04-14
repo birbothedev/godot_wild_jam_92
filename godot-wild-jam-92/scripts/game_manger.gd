@@ -5,11 +5,12 @@ var buy_screen = preload("res://scenes/buy_screen.tscn")
 var game_over_screen = preload("res://scenes/game_over.tscn")
 var start_game_screen = preload("res://scenes/start_menu.tscn")
 
-var rep_counter_label
+var rep_counter_bar
 var money_counter_label
 var berry_count_label
 
 var bar_reputation_value = 100
+var max_reputation = 100
 var bar_money_value = 0
 var player_berry_count = 0
 
@@ -25,8 +26,8 @@ func _process(delta: float) -> void:
 		get_tree().change_scene_to_packed(game_over_screen)
 
 func init_ui():
-	if rep_counter_label:
-		rep_counter_label.text = str(bar_reputation_value)
+	if rep_counter_bar:
+		rep_counter_bar.value = bar_reputation_value
 
 	if money_counter_label:
 		money_counter_label.text = str(bar_money_value)
@@ -36,7 +37,9 @@ func init_ui():
 
 func change_bar_reputation(amount):
 	bar_reputation_value += amount
-	rep_counter_label.text = str(bar_reputation_value)
+	if bar_reputation_value > max_reputation:
+		bar_reputation_value = max_reputation
+	rep_counter_bar.value = bar_reputation_value
 
 func change_bar_money_amount(amount):
 	bar_money_value += amount

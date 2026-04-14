@@ -1,26 +1,16 @@
 [gd_scene format=3 uid="uid://di7j0npd38j1x"]
 
 [ext_resource type="Script" uid="uid://cngp2oqofqmn2" path="res://scripts/ui_handler.gd" id="1_iw0cq"]
+[ext_resource type="Texture2D" uid="uid://dltpmm4vhsah0" path="res://assets/ammo_bar_back.png" id="2_cli26"]
 [ext_resource type="PackedScene" uid="uid://brky53xmjwmn4" path="res://scenes/day_tracker.tscn" id="3_0lcql"]
+[ext_resource type="Texture2D" uid="uid://cw4pycc3y7auv" path="res://assets/ammo_bar_outline.png" id="3_36h4x"]
+[ext_resource type="Texture2D" uid="uid://cp3qmj3kjx80y" path="res://assets/ammo_bar_fill.png" id="4_8l83p"]
+[ext_resource type="Texture2D" uid="uid://cpmonffbx0oj0" path="res://assets/reputation_bar_back.png" id="6_ahy8b"]
+[ext_resource type="Texture2D" uid="uid://ci41id3eebkj2" path="res://assets/reputation_bar_outline.png" id="7_xhecy"]
+[ext_resource type="Texture2D" uid="uid://bs2f64ujns32x" path="res://assets/reputation_bar_fill.png" id="8_87rhf"]
 
 [node name="UI Handler" type="Node2D" unique_id=1313743795]
 script = ExtResource("1_iw0cq")
-
-[node name="Label7" type="Label" parent="." unique_id=870538998]
-offset_left = 59.0
-offset_top = 46.0
-offset_right = 323.0
-offset_bottom = 92.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 33
-text = "Bar Reputation: "
-
-[node name="Rep Counter" type="Label" parent="Label7" unique_id=1585886716]
-layout_mode = 0
-offset_left = 261.0
-offset_right = 318.0
-offset_bottom = 46.0
-theme_override_font_sizes/font_size = 33
 
 [node name="Label8" type="Label" parent="." unique_id=1322541875]
 offset_left = 57.0
@@ -57,23 +47,36 @@ offset_bottom = 48.0
 theme_override_font_sizes/font_size = 33
 text = "0"
 
-[node name="Ammo Tracker" type="ProgressBar" parent="." unique_id=956917703]
-offset_left = 1565.0
-offset_top = 97.0
-offset_right = 1810.0
-offset_bottom = 124.0
-max_value = 10.0
-step = 1.0
+[node name="Ammo Tracker" type="TextureProgressBar" parent="." unique_id=1497347254]
+offset_left = 1599.0
+offset_top = 13.0
+offset_right = 1904.0
+offset_bottom = 128.0
+max_value = 50.0
+value = 25.0
 rounded = true
-show_percentage = false
+nine_patch_stretch = true
+texture_under = ExtResource("2_cli26")
+texture_over = ExtResource("3_36h4x")
+texture_progress = ExtResource("4_8l83p")
 
 [node name="Day Tracker" parent="." unique_id=1185845853 instance=ExtResource("3_0lcql")]
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 915.0
-offset_top = 70.0
-offset_right = 1037.0
-offset_bottom = 70.0
+offset_left = 1735.0
+offset_top = 89.0
+offset_right = 1857.0
+offset_bottom = 132.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="Reputation Bar" type="TextureProgressBar" parent="." unique_id=203192424]
+offset_left = 29.0
+offset_top = -2.0
+offset_right = 325.0
+offset_bottom = 156.0
+nine_patch_stretch = true
+texture_under = ExtResource("6_ahy8b")
+texture_over = ExtResource("7_xhecy")
+texture_progress = ExtResource("8_87rhf")

@@ -2,26 +2,56 @@
 
 [ext_resource type="PackedScene" uid="uid://di7j0npd38j1x" path="res://scenes/ui_handler.tscn" id="1_5h1mi"]
 [ext_resource type="Script" uid="uid://cgrbt0rjt7mn0" path="res://scripts/buy_screen.gd" id="1_wxbv8"]
+[ext_resource type="Texture2D" uid="uid://bpavojl3q5u0o" path="res://assets/buy screen.png" id="2_iq028"]
 
 [node name="Buy Screen" type="Node2D" unique_id=538934202]
 script = ExtResource("1_wxbv8")
 
-[node name="UI Handler" parent="." unique_id=1313743795 instance=ExtResource("1_5h1mi")]
-position = Vector2(-4, 3)
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1612654710]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_iq028")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=969522087]
-offset_left = 893.0
-offset_top = 540.0
-offset_right = 1061.0
-offset_bottom = 580.0
-text = "buy stuff"
+[node name="UI Handler" parent="." unique_id=1313743795 instance=ExtResource("1_5h1mi")]
+position = Vector2(-3, 84)
 
 [node name="Return" type="Button" parent="." unique_id=1366858081]
-offset_left = 1691.0
-offset_top = 962.0
-offset_right = 1834.0
-offset_bottom = 1006.0
+offset_left = 1590.0
+offset_top = 874.0
+offset_right = 1801.0
+offset_bottom = 918.0
 text = "return to game"
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=904288370]
+offset_left = 478.0
+offset_top = 657.0
+offset_right = 1560.0
+offset_bottom = 724.0
+
+[node name="Refill Ammo" type="Button" parent="." unique_id=80079964]
+offset_left = 264.0
+offset_top = 677.0
+offset_right = 409.0
+offset_bottom = 708.0
+text = "berry"
+
+[node name="Purchase Rep" type="Button" parent="." unique_id=473254448]
+offset_left = 1411.0
+offset_top = 319.0
+offset_right = 1638.0
+offset_bottom = 362.0
+theme_override_font_sizes/font_size = 25
+text = "Purchase ($100)"
+
+[node name="Purchase Hypnotize" type="Button" parent="." unique_id=2099239034]
+offset_left = 1413.0
+offset_top = 425.0
+offset_right = 1638.0
+offset_bottom = 468.0
+theme_override_font_sizes/font_size = 25
+text = "Purchase ($100)"
 
 [connection signal="pressed" from="Return" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="Refill Ammo" to="." method="_on_refill_ammo_pressed"]
+[connection signal="pressed" from="Purchase Rep" to="." method="_on_purchase_rep_pressed"]
