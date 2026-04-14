@@ -1,3 +1,195 @@
 [gd_scene format=3 uid="uid://sairgw8biser"]
 
+[ext_resource type="Script" uid="uid://csh1hji6n47q7" path="res://scripts/start_menu.gd" id="1_m7x51"]
+[ext_resource type="Texture2D" uid="uid://qt2bdqxus0p2" path="res://assets/main title screen.png" id="1_thu50"]
+[ext_resource type="FontFile" uid="uid://b6161qhhvxewv" path="res://assets/PixelifySans-VariableFont_wght.ttf" id="2_m7x51"]
+[ext_resource type="Texture2D" uid="uid://eln4wrvbsyw1" path="res://assets/welcome screen.png" id="4_h61rw"]
+[ext_resource type="Texture2D" uid="uid://dn6j5l6amb7sc" path="res://assets/credits screen.png" id="5_fcv5n"]
+[ext_resource type="Script" uid="uid://c7gewhng74bjg" path="res://scripts/credits_screen.gd" id="6_4v6gu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h61rw"]
+bg_color = Color(0.6, 0.6, 0.6, 0.5294118)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fcv5n"]
+bg_color = Color(0.77254903, 0.6, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4v6gu"]
+bg_color = Color(0.6, 0.6, 1, 1)
+
 [node name="Start Menu" type="Node2D" unique_id=1528088282]
+process_mode = 3
+script = ExtResource("1_m7x51")
+
+[node name="Start Menu Screen" type="TextureRect" parent="." unique_id=697523607]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_thu50")
+
+[node name="Quit" type="Button" parent="Start Menu Screen" unique_id=1716276632]
+layout_mode = 0
+offset_left = 795.0
+offset_top = 726.0
+offset_right = 1125.0
+offset_bottom = 839.0
+theme_override_fonts/font = ExtResource("2_m7x51")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_h61rw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fcv5n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4v6gu")
+text = "QUIT GAME"
+
+[node name="Start" type="Button" parent="Start Menu Screen" unique_id=567141740]
+layout_mode = 0
+offset_left = 795.0
+offset_top = 408.0
+offset_right = 1125.0
+offset_bottom = 521.0
+theme_override_fonts/font = ExtResource("2_m7x51")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_h61rw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fcv5n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4v6gu")
+text = "START"
+
+[node name="Credits" type="Button" parent="Start Menu Screen" unique_id=1960076900]
+layout_mode = 0
+offset_left = 795.0
+offset_top = 567.0
+offset_right = 1125.0
+offset_bottom = 680.0
+theme_override_fonts/font = ExtResource("2_m7x51")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_h61rw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fcv5n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4v6gu")
+text = "CREDITS"
+
+[node name="Welcome Screen" type="TextureRect" parent="." unique_id=1625720379]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_h61rw")
+
+[node name="Start Game" type="Button" parent="Welcome Screen" unique_id=890951358]
+layout_mode = 0
+offset_left = 1581.0
+offset_top = 857.0
+offset_right = 1807.0
+offset_bottom = 935.0
+theme_override_fonts/font = ExtResource("2_m7x51")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_h61rw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fcv5n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4v6gu")
+text = "START"
+
+[node name="LineEdit" type="LineEdit" parent="Welcome Screen" unique_id=90245843]
+layout_mode = 0
+offset_left = 406.0
+offset_top = 526.0
+offset_right = 1512.0
+offset_bottom = 583.0
+theme_override_fonts/font = ExtResource("2_m7x51")
+theme_override_font_sizes/font_size = 35
+placeholder_text = "type name and press enter"
+alignment = 1
+max_length = 20
+emoji_menu_enabled = false
+
+[node name="Credits Screen" type="TextureRect" parent="." unique_id=68548770]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_fcv5n")
+script = ExtResource("6_4v6gu")
+
+[node name="Back" type="Button" parent="Credits Screen" unique_id=1654159068]
+layout_mode = 0
+offset_left = 1606.0
+offset_top = 129.0
+offset_right = 1832.0
+offset_bottom = 207.0
+theme_override_fonts/font = ExtResource("2_m7x51")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_h61rw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fcv5n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4v6gu")
+text = "BACK"
+
+[node name="birbo link" type="LinkButton" parent="Credits Screen" unique_id=638676709]
+layout_mode = 0
+offset_left = 948.0
+offset_top = 311.0
+offset_right = 1297.0
+offset_bottom = 371.0
+theme_override_fonts/font = ExtResource("2_m7x51")
+theme_override_font_sizes/font_size = 50
+text = "birbo"
+
+[node name="birbo link2" type="LinkButton" parent="Credits Screen" unique_id=875730184]
+layout_mode = 0
+offset_left = 947.0
+offset_top = 391.0
+offset_right = 1296.0
+offset_bottom = 451.0
+theme_override_fonts/font = ExtResource("2_m7x51")
+theme_override_font_sizes/font_size = 50
+text = "birbo"
+
+[node name="birbo link3" type="LinkButton" parent="Credits Screen" unique_id=284990155]
+layout_mode = 0
+offset_left = 947.0
+offset_top = 473.0
+offset_right = 1296.0
+offset_bottom = 533.0
+theme_override_fonts/font = ExtResource("2_m7x51")
+theme_override_font_sizes/font_size = 50
+text = "birbo"
+
+[node name="sfx link" type="LinkButton" parent="Credits Screen" unique_id=1966445368]
+layout_mode = 0
+offset_left = 947.0
+offset_top = 786.0
+offset_right = 1296.0
+offset_bottom = 846.0
+theme_override_fonts/font = ExtResource("2_m7x51")
+theme_override_font_sizes/font_size = 50
+text = "All SFX assets from Freesound"
+
+[node name="cars" type="LinkButton" parent="Credits Screen" unique_id=2029905242]
+layout_mode = 0
+offset_left = 947.0
+offset_top = 862.0
+offset_right = 1422.0
+offset_bottom = 922.0
+theme_override_fonts/font = ExtResource("2_m7x51")
+theme_override_font_sizes/font_size = 50
+text = "Top-Down Pixel Cars"
+
+[node name="music" type="LinkButton" parent="Credits Screen" unique_id=2012131406]
+layout_mode = 0
+offset_left = 947.0
+offset_top = 710.0
+offset_right = 1530.0
+offset_bottom = 770.0
+theme_override_fonts/font = ExtResource("2_m7x51")
+theme_override_font_sizes/font_size = 50
+text = "Jazz Cafe Music - Pixaby"
+
+[connection signal="pressed" from="Start Menu Screen/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Start Menu Screen/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Start Menu Screen/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Welcome Screen/Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="text_submitted" from="Welcome Screen/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="Credits Screen/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Credits Screen/birbo link" to="Credits Screen" method="_on_birbo_link_pressed"]
+[connection signal="pressed" from="Credits Screen/birbo link2" to="Credits Screen" method="_on_birbo_link_2_pressed"]
+[connection signal="pressed" from="Credits Screen/birbo link3" to="Credits Screen" method="_on_birbo_link_3_pressed"]
+[connection signal="pressed" from="Credits Screen/sfx link" to="Credits Screen" method="_on_sfx_link_pressed"]
+[connection signal="pressed" from="Credits Screen/cars" to="Credits Screen" method="_on_cars_pressed"]
+[connection signal="pressed" from="Credits Screen/music" to="Credits Screen" method="_on_music_pressed"]

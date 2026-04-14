@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dfevsmnstypde"]
+
+[ext_resource type="AudioStream" uid="uid://b6ch1r4hdicou" path="res://assets/audio/tunetank-jazz-cafe-music-348267.mp3" id="1_0rulj"]
+
+[node name="BackgroundMusic" type="Node2D" unique_id=307606077]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1316772535]
+stream = ExtResource("1_0rulj")
+volume_db = -28.69
+autoplay = true

@@ -3,6 +3,21 @@
 [ext_resource type="PackedScene" uid="uid://di7j0npd38j1x" path="res://scenes/ui_handler.tscn" id="1_5h1mi"]
 [ext_resource type="Script" uid="uid://cgrbt0rjt7mn0" path="res://scripts/buy_screen.gd" id="1_wxbv8"]
 [ext_resource type="Texture2D" uid="uid://bpavojl3q5u0o" path="res://assets/buy screen.png" id="2_iq028"]
+[ext_resource type="FontFile" uid="uid://b6161qhhvxewv" path="res://assets/PixelifySans-VariableFont_wght.ttf" id="4_72dmq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_euwkd"]
+bg_color = Color(0.6, 0.6, 0.6, 0.5294118)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t1w6k"]
+bg_color = Color(0.77254903, 0.6, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmn13"]
+bg_color = Color(0.6, 0.6, 1, 1)
 
 [node name="Buy Screen" type="Node2D" unique_id=538934202]
 script = ExtResource("1_wxbv8")
@@ -14,13 +29,6 @@ texture = ExtResource("2_iq028")
 
 [node name="UI Handler" parent="." unique_id=1313743795 instance=ExtResource("1_5h1mi")]
 position = Vector2(-3, 84)
-
-[node name="Return" type="Button" parent="." unique_id=1366858081]
-offset_left = 1590.0
-offset_top = 874.0
-offset_right = 1801.0
-offset_bottom = 918.0
-text = "return to game"
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=904288370]
 offset_left = 478.0
@@ -35,23 +43,43 @@ offset_right = 409.0
 offset_bottom = 708.0
 text = "berry"
 
-[node name="Purchase Rep" type="Button" parent="." unique_id=473254448]
-offset_left = 1411.0
-offset_top = 319.0
-offset_right = 1638.0
-offset_bottom = 362.0
-theme_override_font_sizes/font_size = 25
-text = "Purchase ($100)"
-
-[node name="Purchase Hypnotize" type="Button" parent="." unique_id=2099239034]
+[node name="Purchase Reputation" type="Button" parent="." unique_id=664356493]
 offset_left = 1413.0
-offset_top = 425.0
-offset_right = 1638.0
-offset_bottom = 468.0
-theme_override_font_sizes/font_size = 25
+offset_top = 303.0
+offset_right = 1637.0
+offset_bottom = 377.0
+theme_override_fonts/font = ExtResource("4_72dmq")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_euwkd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t1w6k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wmn13")
 text = "Purchase ($100)"
 
-[connection signal="pressed" from="Return" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
+[node name="Purchase Hypnotize" type="Button" parent="." unique_id=1524594668]
+offset_left = 1412.0
+offset_top = 408.0
+offset_right = 1636.0
+offset_bottom = 482.0
+theme_override_fonts/font = ExtResource("4_72dmq")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_euwkd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t1w6k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wmn13")
+text = "Purchase ($100)"
+
+[node name="Return to Game" type="Button" parent="." unique_id=811243932]
+offset_left = 1582.0
+offset_top = 859.0
+offset_right = 1806.0
+offset_bottom = 933.0
+theme_override_fonts/font = ExtResource("4_72dmq")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_euwkd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t1w6k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wmn13")
+text = "Return to Game"
+
 [connection signal="pressed" from="Refill Ammo" to="." method="_on_refill_ammo_pressed"]
-[connection signal="pressed" from="Purchase Rep" to="." method="_on_purchase_rep_pressed"]
+[connection signal="pressed" from="Purchase Reputation" to="." method="_on_purchase_reputation_pressed"]
+[connection signal="pressed" from="Purchase Hypnotize" to="." method="_on_purchase_hypnotize_pressed"]
+[connection signal="pressed" from="Return to Game" to="." method="_on_return_to_game_pressed"]

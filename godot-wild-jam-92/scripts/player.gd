@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 @export var speed = 400
-var AMMO_COUNT = 50
-var MAX_AMMO_COUNT = 50
+#var AMMO_COUNT = 50
+#var MAX_AMMO_COUNT = 50
 var screen_size
 var sprite_size
 var ui_handler 
@@ -12,7 +12,6 @@ var walking_audio
 var squirt_gun_audio
 
 func _ready() -> void:
-	reset_ammo_count()
 	walking_audio = $Walking
 	squirt_gun_audio = $"Squirt Noise"
 	ui_handler = $"../UI Handler"
@@ -33,19 +32,16 @@ func get_input():
 	velocity = input_direction * speed
 	
 	if Input.is_action_just_pressed("left mouse click"):
-		if AMMO_COUNT >= 1:
+		if GameManager.player_ammo_count >= 1:
 			fire()
 			ui_handler.update_ammo_progress_bar()
 		else:
 			print("no ammo")
 
 func fire():
-	AMMO_COUNT -= 1
+	GameManager.change_player_ammo_count(-1)
 	var juice = juice_path.instantiate()
 	juice.dir = rotation
 	juice.pos = firing_position.global_position
 	juice.rot = global_rotation
 	get_parent().add_child(juice)
-
-func reset_ammo_count():
-	AMMO_COUNT = MAX_AMMO_COUNT

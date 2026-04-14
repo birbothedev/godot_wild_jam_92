@@ -47,7 +47,7 @@ size = Vector2(22, 40)
 size = Vector2(58, 78)
 
 [node name="Patron" type="CharacterBody2D" unique_id=860337880]
-collision_mask = 151
+collision_mask = 183
 script = ExtResource("1_2v2r5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=810181595]

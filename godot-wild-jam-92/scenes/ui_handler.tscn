@@ -8,50 +8,19 @@
 [ext_resource type="Texture2D" uid="uid://cpmonffbx0oj0" path="res://assets/reputation_bar_back.png" id="6_ahy8b"]
 [ext_resource type="Texture2D" uid="uid://ci41id3eebkj2" path="res://assets/reputation_bar_outline.png" id="7_xhecy"]
 [ext_resource type="Texture2D" uid="uid://bs2f64ujns32x" path="res://assets/reputation_bar_fill.png" id="8_87rhf"]
+[ext_resource type="Texture2D" uid="uid://hgamo7ybfunm" path="res://assets/blue_berry.png" id="9_ahy8b"]
+[ext_resource type="FontFile" uid="uid://b6161qhhvxewv" path="res://assets/PixelifySans-VariableFont_wght.ttf" id="10_xhecy"]
+[ext_resource type="Texture2D" uid="uid://c7anmf7qahjjj" path="res://assets/coins.png" id="11_87rhf"]
+[ext_resource type="Texture2D" uid="uid://b8w76y0mcnrg5" path="res://assets/red_berry.png" id="12_xhecy"]
 
 [node name="UI Handler" type="Node2D" unique_id=1313743795]
 script = ExtResource("1_iw0cq")
 
-[node name="Label8" type="Label" parent="." unique_id=1322541875]
-offset_left = 57.0
-offset_top = 90.0
-offset_right = 321.0
-offset_bottom = 136.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 33
-text = "Bar Money: "
-
-[node name="Money Counter" type="Label" parent="Label8" unique_id=1371277209]
-layout_mode = 0
-offset_left = 189.0
-offset_right = 247.0
-offset_bottom = 46.0
-theme_override_font_sizes/font_size = 33
-text = "$ 0"
-
-[node name="Label9" type="Label" parent="." unique_id=790148757]
-offset_left = 58.0
-offset_top = 130.0
-offset_right = 322.0
-offset_bottom = 176.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 33
-text = "Berry Count:"
-
-[node name="Berry Counter" type="Label" parent="Label9" unique_id=967632210]
-layout_mode = 0
-offset_left = 207.0
-offset_top = 2.0
-offset_right = 265.0
-offset_bottom = 48.0
-theme_override_font_sizes/font_size = 33
-text = "0"
-
 [node name="Ammo Tracker" type="TextureProgressBar" parent="." unique_id=1497347254]
 offset_left = 1599.0
-offset_top = 13.0
+offset_top = 8.0
 offset_right = 1904.0
-offset_bottom = 128.0
+offset_bottom = 140.0
 max_value = 50.0
 value = 25.0
 rounded = true
@@ -72,11 +41,62 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="Reputation Bar" type="TextureProgressBar" parent="." unique_id=203192424]
-offset_left = 29.0
-offset_top = -2.0
-offset_right = 325.0
-offset_bottom = 156.0
+offset_left = 47.0
+offset_right = 343.0
+offset_bottom = 158.0
 nine_patch_stretch = true
 texture_under = ExtResource("6_ahy8b")
 texture_over = ExtResource("7_xhecy")
 texture_progress = ExtResource("8_87rhf")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=231385228]
+visible = false
+offset_left = 38.0
+offset_top = 96.0
+offset_right = 98.0
+offset_bottom = 156.0
+texture = ExtResource("9_ahy8b")
+
+[node name="Blue Berry Counter" type="Label" parent="TextureRect" unique_id=967632210]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 7.0
+offset_right = 132.0
+offset_bottom = 53.0
+theme_override_fonts/font = ExtResource("10_xhecy")
+theme_override_font_sizes/font_size = 33
+text = "0"
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=2055225682]
+offset_left = 208.0
+offset_top = 100.0
+offset_right = 266.0
+offset_bottom = 154.0
+texture = ExtResource("11_87rhf")
+
+[node name="Money Counter" type="Label" parent="TextureRect2" unique_id=1371277209]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 6.0
+offset_right = 123.0
+offset_bottom = 52.0
+theme_override_fonts/font = ExtResource("10_xhecy")
+theme_override_font_sizes/font_size = 33
+text = "0"
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1465405609]
+offset_left = 97.0
+offset_top = 98.0
+offset_right = 158.0
+offset_bottom = 159.0
+texture = ExtResource("12_xhecy")
+
+[node name="Red Berry Counter" type="Label" parent="TextureRect3" unique_id=1757898347]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 8.0
+offset_right = 130.0
+offset_bottom = 54.0
+theme_override_fonts/font = ExtResource("10_xhecy")
+theme_override_font_sizes/font_size = 33
+text = "0"

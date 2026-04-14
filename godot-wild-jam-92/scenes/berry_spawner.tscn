@@ -5,8 +5,13 @@
 [node name="Berry Spawner" type="Node2D" unique_id=1340468472]
 script = ExtResource("1_l6nfk")
 
-[node name="Timer" type="Timer" parent="." unique_id=2082298306]
-wait_time = 10.0
+[node name="Berry Blue Timer" type="Timer" parent="." unique_id=2082298306]
+wait_time = 5.0
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Berry Red Timer" type="Timer" parent="." unique_id=1107703698]
+wait_time = 12.0
+autostart = true
+
+[connection signal="timeout" from="Berry Blue Timer" to="." method="_on_berry_blue_timer_timeout"]
+[connection signal="timeout" from="Berry Red Timer" to="." method="_on_berry_red_timer_timeout"]

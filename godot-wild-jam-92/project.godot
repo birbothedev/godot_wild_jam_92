@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="godot wild jam 92"
-run/main_scene="uid://bwho3bu6kutw8"
+run/main_scene="uid://sairgw8biser"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
 [autoload]
 
 GameManager="*uid://bjuohbnrp87nn"
+BackgroundMusic="*uid://dfevsmnstypde"
 
 [display]
 
@@ -75,6 +76,7 @@ escape={
 2d_physics/layer_2="player"
 2d_physics/layer_3="bar"
 2d_physics/layer_5="cars"
+2d_physics/layer_6="billboard legs"
 2d_physics/layer_8="juice"
 2d_physics/layer_10="berry"
 

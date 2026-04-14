@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ba2rrmspfunf8"]
+
+[ext_resource type="Texture2D" uid="uid://b8w76y0mcnrg5" path="res://assets/red_berry.png" id="1_skc0i"]
+[ext_resource type="Script" uid="uid://bnxxjrpmrke32" path="res://scripts/boost_berry_red.gd" id="1_xmefu"]
+[ext_resource type="AudioStream" uid="uid://3hvao28jdyf2" path="res://assets/audio/720110__baggonotes__portal_spawn.wav" id="2_xmefu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ieec"]
+radius = 17.029387
+
+[node name="Boost Berry Red" type="Area2D" unique_id=1531503975]
+z_index = -1
+collision_layer = 512
+collision_mask = 2
+script = ExtResource("1_xmefu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1285855904]
+scale = Vector2(1.1875, 1.1875)
+texture = ExtResource("1_skc0i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1697870241]
+shape = SubResource("CircleShape2D_4ieec")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2144231415]
+stream = ExtResource("2_xmefu")
+volume_db = -9.063
+autoplay = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

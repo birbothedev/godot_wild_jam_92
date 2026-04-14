@@ -1,6 +1,7 @@
 extends Node2D
 
-@onready var berry = preload("res://scenes/boost_berry.tscn")
+@onready var berry_blue = preload("res://scenes/boost_berry_blue.tscn")
+@onready var berry_red = preload("res://scenes/boost_berry_red.tscn")
 @onready var handler = $"../Berry Handler"
 
 var spawn_locations
@@ -15,17 +16,6 @@ func _ready() -> void:
 	refill_spawn_locations()
 	get_random_spawn_location()
 
-func _on_timer_timeout() -> void:
-	if !GameManager.game_paused_for_buying:
-		get_random_spawn_location()
-		# spawn a new berry everytime the timer runs out
-		var ber = berry.instantiate()
-		ber.name = "Berry"
-		ber.global_position = chosen_spawn 
-		print(chosen_spawn)
-		ber.z_index = 0
-		handler.add_child(ber) 
-
 func get_random_spawn_location():
 	if spawn_locations_storage.is_empty():
 		refill_spawn_locations()
@@ -35,3 +25,25 @@ func get_random_spawn_location():
 func refill_spawn_locations():
 	spawn_locations_storage = spawn_locations.duplicate()
 	spawn_locations_storage.shuffle()
+
+func _on_berry_blue_timer_timeout() -> void:
+	if !GameManager.game_paused_for_buying:
+		get_random_spawn_location()
+		# spawn a new berry everytime the timer runs out
+		var ber = berry_blue.instantiate()
+		ber.name = "Berry"
+		ber.global_position = chosen_spawn 
+		print(chosen_spawn)
+		ber.z_index = 0
+		handler.add_child(ber) 
+
+func _on_berry_red_timer_timeout() -> void:
+	if !GameManager.game_paused_for_buying:
+		get_random_spawn_location()
+		# spawn a new berry everytime the timer runs out
+		var ber = berry_red.instantiate()
+		ber.name = "Berry"
+		ber.global_position = chosen_spawn 
+		print(chosen_spawn)
+		ber.z_index = 0
+		handler.add_child(ber) 
