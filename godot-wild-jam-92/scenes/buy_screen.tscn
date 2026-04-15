@@ -63,10 +63,10 @@ texture = ExtResource("2_iq028")
 position = Vector2(-3, 84)
 
 [node name="Booster Bar" type="ProgressBar" parent="." unique_id=904288370]
-offset_left = 865.0
-offset_top = 743.0
-offset_right = 1684.0
-offset_bottom = 810.0
+offset_left = 849.0
+offset_top = 769.0
+offset_right = 1557.0
+offset_bottom = 836.0
 theme_override_fonts/font = ExtResource("4_72dmq")
 theme_override_styles/background = SubResource("StyleBoxFlat_u1slw")
 theme_override_styles/fill = SubResource("StyleBoxFlat_a10cq")
@@ -76,20 +76,20 @@ allow_greater = true
 show_percentage = false
 
 [node name="Add Berry Button" type="TextureButton" parent="." unique_id=1386194593]
-offset_left = 320.0
-offset_top = 723.0
-offset_right = 420.0
-offset_bottom = 823.0
+offset_left = 339.0
+offset_top = 758.0
+offset_right = 439.0
+offset_bottom = 858.0
 texture_normal = ExtResource("5_sipeq")
 texture_pressed = ExtResource("6_ao5av")
 texture_hover = ExtResource("7_hpkx2")
 stretch_mode = 0
 
 [node name="Brew Button" type="TextureButton" parent="." unique_id=317652981]
-offset_left = 728.0
-offset_top = 723.0
-offset_right = 828.0
-offset_bottom = 823.0
+offset_left = 702.0
+offset_top = 755.0
+offset_right = 802.0
+offset_bottom = 855.0
 texture_normal = ExtResource("5_sipeq")
 texture_pressed = ExtResource("6_ao5av")
 texture_hover = ExtResource("7_hpkx2")
@@ -105,7 +105,7 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_euwkd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_t1w6k")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wmn13")
-text = "Purchase ($40)"
+text = "Purchase ($100)"
 
 [node name="Purchase Hypnotize" type="Button" parent="." unique_id=1524594668]
 offset_left = 1413.0
@@ -144,10 +144,10 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_wmn13")
 text = "Return to Game"
 
 [node name="Brewing Bar" type="TextureProgressBar" parent="." unique_id=1702519839]
-offset_left = 389.0
-offset_top = 617.0
-offset_right = 758.0
-offset_bottom = 977.0
+offset_left = 408.0
+offset_top = 715.0
+offset_right = 713.0
+offset_bottom = 980.0
 max_value = 20.0
 fill_mode = 3
 nine_patch_stretch = true
@@ -156,10 +156,10 @@ texture_over = ExtResource("9_a10cq")
 texture_progress = ExtResource("10_u1slw")
 
 [node name="TextureRect3" type="TextureRect" parent="." unique_id=821322390]
-offset_left = 91.0
-offset_top = 678.0
-offset_right = 309.0
-offset_bottom = 881.0
+offset_left = 176.0
+offset_top = 747.0
+offset_right = 312.0
+offset_bottom = 878.0
 texture = ExtResource("5_euwkd")
 
 [node name="Spritz Label" type="Label" parent="." unique_id=1011992311]
@@ -171,6 +171,7 @@ theme_override_fonts/font = ExtResource("4_72dmq")
 theme_override_font_sizes/font_size = 35
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1863970617]
+visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=39965167 instance=ExtResource("12_a10cq")]
 offset_left = -2.0

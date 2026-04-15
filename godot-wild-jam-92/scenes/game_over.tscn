@@ -1,10 +1,41 @@
 [gd_scene format=3 uid="uid://61nijdee4hqi"]
 
-[node name="Game Over" type="Node2D" unique_id=1006260259]
+[ext_resource type="Script" uid="uid://ihecbhjoc0n" path="res://scripts/game_over.gd" id="1_tbwuq"]
+[ext_resource type="Texture2D" uid="uid://bhkcaxqjsj5sk" path="res://assets/end_game_screen.png" id="2_racf3"]
+[ext_resource type="FontFile" uid="uid://b6161qhhvxewv" path="res://assets/PixelifySans-VariableFont_wght.ttf" id="3_7m3ot"]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=871339198]
-offset_left = 392.0
-offset_top = 213.0
-offset_right = 560.0
-offset_bottom = 253.0
-text = "GAME OBER"
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v3hpu"]
+bg_color = Color(0.6, 0.6, 0.6, 0.5294118)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_irg28"]
+bg_color = Color(0.77254903, 0.6, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jtsn"]
+bg_color = Color(0.6, 0.6, 1, 1)
+
+[node name="Game Over" type="Node2D" unique_id=1006260259]
+script = ExtResource("1_tbwuq")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1704627284]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_racf3")
+
+[node name="Quit" type="Button" parent="." unique_id=645954563]
+offset_left = 1582.0
+offset_top = 857.0
+offset_right = 1806.0
+offset_bottom = 934.0
+theme_override_fonts/font = ExtResource("3_7m3ot")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_v3hpu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_irg28")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2jtsn")
+text = "QUIT GAME"
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

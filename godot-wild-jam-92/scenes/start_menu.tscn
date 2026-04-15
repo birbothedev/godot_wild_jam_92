@@ -70,7 +70,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_4v6gu")
 text = "CREDITS"
 
 [node name="Welcome Screen" type="TextureRect" parent="." unique_id=1625720379]
-visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("4_h61rw")
@@ -102,7 +101,6 @@ max_length = 20
 emoji_menu_enabled = false
 
 [node name="Credits Screen" type="TextureRect" parent="." unique_id=68548770]
-visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("5_fcv5n")

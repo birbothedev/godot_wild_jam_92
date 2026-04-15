@@ -12,7 +12,7 @@ var money_counter_label
 var blue_berry_count_label
 var red_berry_count_label
 
-var bar_reputation_value = 100
+var bar_reputation_value = 10
 var max_reputation = 100
 var bar_money_value = 50
 var player_berry_blue_count = 0
@@ -31,8 +31,10 @@ var hypnotize_purchased = false
 var player_ammo_count = 50
 var max_ammo_count = 50
 
+var end_game = false
+
 func _process(delta: float) -> void:
-	if bar_reputation_value == 0:
+	if bar_reputation_value == 0 and !end_game:
 		go_to_game_over_screen()
 
 func init_ui():
@@ -94,6 +96,7 @@ func reset_game():
 	player_berry_blue_count = 0
 
 	game_paused_for_buying = false
+	end_game = false
 
 	day = 1
 	hour = 20
