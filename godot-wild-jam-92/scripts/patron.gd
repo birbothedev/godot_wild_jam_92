@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 35
+@export var speed = 55
 var target_position : Vector2
 var patron_target_locations
 var temp_positions_array

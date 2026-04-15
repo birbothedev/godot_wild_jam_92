@@ -28,7 +28,7 @@ var timer = 0
 
 var hypnotize_purchased = false
 
-var player_ammo_count = 10
+var player_ammo_count = 50
 var max_ammo_count = 50
 
 func _process(delta: float) -> void:
