@@ -1,9 +1,9 @@
 extends Node
 
-var main_game_scene = preload("res://scenes/main_game.tscn")
-var buy_screen = preload("res://scenes/buy_screen.tscn")
-var game_over_screen = preload("res://scenes/game_over.tscn")
-var start_game_screen = preload("res://scenes/start_menu.tscn")
+var main_game_scene = "res://scenes/main_game.tscn"
+var buy_screen = "res://scenes/buy_screen.tscn"
+var game_over_screen = "res://scenes/game_over.tscn"
+var start_game_screen = "res://scenes/start_menu.tscn"
 
 var bar_name_input
 var bar_name_label
@@ -14,11 +14,12 @@ var red_berry_count_label
 
 var bar_reputation_value = 100
 var max_reputation = 100
-var bar_money_value = 0
+var bar_money_value = 50
 var player_berry_blue_count = 0
-var player_berry_red_count = 0
+var player_berry_red_count = 10
 
 var game_paused_for_buying = false
+var paused_for_timer = false
 
 var day = 1
 var hour = 20
@@ -27,12 +28,12 @@ var timer = 0
 
 var hypnotize_purchased = false
 
-var player_ammo_count = 50
+var player_ammo_count = 10
 var max_ammo_count = 50
 
 func _process(delta: float) -> void:
 	if bar_reputation_value == 0:
-		get_tree().change_scene_to_packed(game_over_screen)
+		go_to_game_over_screen()
 
 func init_ui():
 	if rep_counter_bar:
@@ -70,12 +71,20 @@ func change_player_red_berry_count(amount):
 	red_berry_count_label.text = str(player_berry_red_count)
 
 func go_to_buy_screen():
-	get_tree().change_scene_to_packed(buy_screen)
+	TransitionHandler.fade_out(buy_screen, .8, Color.BLACK)
 	game_paused_for_buying = false
 
+func go_to_start_screen():
+	TransitionHandler.fade_out(start_game_screen, .8, Color.BLACK)
+	reset_game()
+
 func go_to_main_screen():
-	get_tree().change_scene_to_packed(main_game_scene)
+	TransitionHandler.fade_out(main_game_scene, .8, Color.BLACK)
 	game_paused_for_buying = false
+
+func go_to_game_over_screen():
+	TransitionHandler.fade_out(game_over_screen, .8, Color.BLACK)
+	reset_game()
 
 func reset_game():
 	bar_reputation_value = 100

@@ -26,4 +26,4 @@ func _on_resume_pressed() -> void:
 func _on_quit_pressed() -> void:
 	get_tree().paused = false
 	GameManager.reset_game()
-	get_tree().change_scene_to_packed(GameManager.start_game_screen)
+	GameManager.go_to_start_screen()

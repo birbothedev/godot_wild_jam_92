@@ -1,8 +1,6 @@
 extends CharacterBody2D
 
 @export var speed = 400
-#var AMMO_COUNT = 50
-#var MAX_AMMO_COUNT = 50
 var screen_size
 var sprite_size
 var ui_handler 

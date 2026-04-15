@@ -32,7 +32,7 @@ func _on_start_game_pressed() -> void:
 	credits_screen.hide()
 	start_screen.hide()
 	welcome_screen.hide()
-	get_tree().change_scene_to_packed(GameManager.main_game_scene)
+	GameManager.go_to_main_screen()
 
 func _on_back_pressed() -> void:
 	credits_screen.hide()

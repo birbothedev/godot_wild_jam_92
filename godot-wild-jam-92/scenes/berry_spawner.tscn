@@ -6,7 +6,7 @@
 script = ExtResource("1_l6nfk")
 
 [node name="Berry Blue Timer" type="Timer" parent="." unique_id=2082298306]
-wait_time = 5.0
+wait_time = 8.0
 autostart = true
 
 [node name="Berry Red Timer" type="Timer" parent="." unique_id=1107703698]

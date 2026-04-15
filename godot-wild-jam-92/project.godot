@@ -19,6 +19,7 @@ config/icon="res://assets/icon.svg"
 
 GameManager="*uid://bjuohbnrp87nn"
 BackgroundMusic="*uid://dfevsmnstypde"
+TransitionHandler="*uid://ds7wfaponof3q"
 
 [display]
 

@@ -566,10 +566,10 @@ position = Vector2(1448, 416)
 [node name="Patron Handler" type="Node2D" parent="." unique_id=1507501221]
 
 [node name="Patron" parent="Patron Handler" unique_id=860337880 groups=["patrons"] instance=ExtResource("4_wjob3")]
-position = Vector2(952, 254)
+position = Vector2(915, 285)
 
 [node name="Patron Spawner" parent="." unique_id=1477667712 instance=ExtResource("5_8xp80")]
-position = Vector2(956, 286)
+position = Vector2(957, 246)
 
 [node name="Wander Points" type="Node2D" parent="." unique_id=654370566]
 
@@ -617,15 +617,6 @@ position = Vector2(1279, 695)
 
 [node name="Marker2D4" type="Marker2D" parent="Wander Points" unique_id=1515937233 groups=["reg_patrons"]]
 position = Vector2(677, 851)
-
-[node name="Label2" type="Label" parent="Wander Points" unique_id=71987334]
-offset_left = 942.0
-offset_top = 230.0
-offset_right = 982.0
-offset_bottom = 276.0
-theme_override_colors/font_color = Color(1, 0.1882353, 1, 1)
-theme_override_font_sizes/font_size = 33
-text = "x"
 
 [node name="Bar" parent="." unique_id=2136406632 instance=ExtResource("6_sp04v")]
 position = Vector2(965, 118)
@@ -684,6 +675,10 @@ position = Vector2(1650, 797)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1448312330]
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=39965167 instance=ExtResource("10_5luka")]
+offset_left = -1.0
+offset_top = 10.0
+offset_right = -1.0
+offset_bottom = 10.0
 
 [node name="Billboard" type="Sprite2D" parent="." unique_id=1224684756]
 position = Vector2(609.125, 87)

@@ -22,10 +22,14 @@ func _process(delta: float) -> void:
 	text = "Day " + str(GameManager.day) + ", " + str(GameManager.hour).pad_zeros(2) + ":00"
 	
 	# pause game for buying upgrades at 8am
-	if GameManager.hour == 8:
+	if GameManager.hour == 8 and !GameManager.paused_for_timer:
+		GameManager.paused_for_timer = true
 		GameManager.game_paused_for_buying = true
 		GameManager.go_to_buy_screen()
+		print("going to buy screen")
 	
 	# return to game automatically at 8pm
 	if GameManager.hour == 19 and GameManager.minutes == 50:
+		GameManager.paused_for_timer = false
+		GameManager.game_paused_for_buying = false
 		GameManager.go_to_main_screen()
