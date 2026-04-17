@@ -1,16 +1,14 @@
 extends Area2D
 
+var patron_safe_for_counting = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+func mark_safe_for_counting(body):
+	body.patron_safe_for_counting = true
 
 func _on_body_entered(body: Node2D) -> void:
-	GameManager.change_bar_money_amount(1)
-	body.call_deferred("queue_free")
+	if body.patron_safe_for_counting == true:
+		GameManager.change_bar_money_amount(1)
+		body.call_deferred("queue_free")
+
+func _on_safe_for_counting_body_exited(body: Node2D) -> void:
+	mark_safe_for_counting(body)

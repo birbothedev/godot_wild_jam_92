@@ -1,6 +1,6 @@
 extends Node2D
 
-var PLUS_REP_COST = 100
+var PLUS_REP_COST = 40
 var HYPNOTIZE_COST = 100
 var BERRY_BOOST_COST = 3
 var SPRITZ_AMMO_MULTIPLIER = 5
@@ -51,7 +51,7 @@ func _on_return_to_game_pressed() -> void:
 	GameManager.hour = 20
 
 func _on_purchase_booster_pressed() -> void:
-	if booster_purchased_count <= 10 and GameManager.bar_money_value >= BERRY_BOOST_COST and booster_purchased_count < GameManager.player_berry_red_count:
+	if booster_purchased_count <= 10 and GameManager.bar_money_value >= BERRY_BOOST_COST and booster_purchased_count < GameManager.player_berry_red_count :
 		booster_purchased_count += 1
 		brewing_bar.value += 1
 		GameManager.change_bar_money_amount(BERRY_BOOST_COST * -1)
@@ -66,9 +66,6 @@ func _on_add_berry_button_pressed() -> void:
 func _on_brew_button_pressed() -> void:
 	var extra = booster_purchased_count - added_berry_count
 	total_brewed = ((added_berry_count + booster_purchased_count) - extra) * SPRITZ_AMMO_MULTIPLIER
-	print(added_berry_count)
-	print(booster_purchased_count)
-	print(extra)
 	print(total_brewed)
 	if !already_brewed and total_brewed > 0:
 		if booster_purchased_count != added_berry_count:

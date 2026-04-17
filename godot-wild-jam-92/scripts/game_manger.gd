@@ -62,14 +62,20 @@ func change_bar_reputation(amount):
 
 func change_bar_money_amount(amount):
 	bar_money_value += amount
+	if bar_money_value <= 0:
+		bar_money_value = 0
 	money_counter_label.text = str(bar_money_value)
 
 func change_player_blue_berry_count(amount):
 	player_berry_blue_count += amount
+	if player_berry_blue_count <= 0:
+		player_berry_blue_count = 0
 	blue_berry_count_label.text = str(player_berry_blue_count)
 
 func change_player_red_berry_count(amount):
 	player_berry_red_count += amount
+	if player_berry_red_count <= 0:
+		player_berry_red_count = 0
 	red_berry_count_label.text = str(player_berry_red_count)
 
 func go_to_buy_screen():

@@ -105,7 +105,7 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_euwkd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_t1w6k")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wmn13")
-text = "Purchase ($100)"
+text = "Purchase ($40)"
 
 [node name="Purchase Hypnotize" type="Button" parent="." unique_id=1524594668]
 offset_left = 1413.0

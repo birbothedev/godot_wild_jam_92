@@ -673,7 +673,6 @@ position = Vector2(1650, 797)
 [node name="Berry Spawner" parent="." unique_id=1340468472 instance=ExtResource("9_ikqpi")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1448312330]
-visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=39965167 instance=ExtResource("10_5luka")]
 offset_left = -1.0
@@ -715,10 +714,10 @@ autowrap_mode = 3
 position = Vector2(2, -2)
 
 [node name="Marker2D" type="Marker2D" parent="Patron Spawn Points" unique_id=1341274562 groups=["patron_spawns"]]
-position = Vector2(762, 155)
+position = Vector2(789, 144)
 
 [node name="Marker2D3" type="Marker2D" parent="Patron Spawn Points" unique_id=1206490742 groups=["patron_spawns"]]
 position = Vector2(969, 255)
 
 [node name="Marker2D2" type="Marker2D" parent="Patron Spawn Points" unique_id=1588563884 groups=["patron_spawns"]]
-position = Vector2(1173, 216)
+position = Vector2(1149, 123)

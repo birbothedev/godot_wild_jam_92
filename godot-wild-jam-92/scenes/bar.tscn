@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://2bm2o453veir" path="res://scripts/bar.gd" id="1_bwlfd"]
 [ext_resource type="Texture2D" uid="uid://dt833gjn7b0nw" path="res://assets/bar.png" id="2_bwlfd"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x848m"]
+size = Vector2(414, 277)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
 size = Vector2(329, 214)
 
@@ -14,6 +17,14 @@ size = Vector2(368, 242)
 [node name="Bar" type="Area2D" unique_id=2136406632]
 collision_layer = 4
 script = ExtResource("1_bwlfd")
+
+[node name="Safe For Counting" type="Area2D" parent="." unique_id=1248531556]
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Safe For Counting" unique_id=558738907]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_x848m")
+debug_color = Color(0.9007989, 0.28445438, 0.337512, 0.41960785)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=79616243]
 texture = ExtResource("2_bwlfd")
@@ -33,3 +44,4 @@ position = Vector2(3, 2)
 shape = SubResource("RectangleShape2D_bwlfd")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Safe For Counting" to="." method="_on_safe_for_counting_body_exited"]

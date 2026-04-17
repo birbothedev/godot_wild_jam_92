@@ -53,7 +53,6 @@ script = ExtResource("1_g2els")
 shape = SubResource("RectangleShape2D_jyhfs")
 
 [node name="SQ Firing Position" type="Node2D" parent="." unique_id=1888904493]
-position = Vector2(55, 0)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=735561004]
 scale = Vector2(0.84277344, 0.6616211)

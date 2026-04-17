@@ -4,6 +4,7 @@ func _ready() -> void:
 	hide()
 
 func resume():
+	hide()
 	get_tree().paused = false
 	$AnimationPlayer.play_backwards("blur")
 
@@ -21,7 +22,6 @@ func _input(event):
 
 func _on_resume_pressed() -> void:
 	resume()
-	hide()
 
 func _on_quit_pressed() -> void:
 	get_tree().paused = false

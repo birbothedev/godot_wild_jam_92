@@ -10,6 +10,7 @@ var player
 var is_hypnotized = false
 var bar
 var patron_sprite
+var patron_safe_for_counting = false
 
 func _ready():
 	player = $"../../Player"
