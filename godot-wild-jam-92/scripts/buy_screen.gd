@@ -21,6 +21,8 @@ func _ready() -> void:
 	$"Brew Button".disabled = false
 	$"Purchase Booster".disabled = false
 	$"Add Berry Button".disabled = false
+	if GameManager.hypnotize_purchased:
+		$"Purchase Hypnotize".disabled = true
 	ui_handler = $"UI Handler"
 	brewing_bar = $"Brewing Bar"
 	brewed_ammo_bar = $"Booster Bar"
@@ -41,6 +43,7 @@ func _on_purchase_hypnotize_pressed() -> void:
 		return
 	GameManager.change_bar_money_amount((HYPNOTIZE_COST * -1))
 	GameManager.hypnotize_purchased = true
+	$"Purchase Hypnotize".disabled = true
 
 func _on_return_to_game_pressed() -> void:
 	GameManager.go_to_main_screen()

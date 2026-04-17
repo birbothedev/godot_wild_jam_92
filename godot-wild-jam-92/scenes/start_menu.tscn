@@ -95,12 +95,13 @@ offset_right = 1512.0
 offset_bottom = 583.0
 theme_override_fonts/font = ExtResource("2_m7x51")
 theme_override_font_sizes/font_size = 35
-placeholder_text = "type name and press enter"
+placeholder_text = "type the name of your bar"
 alignment = 1
 max_length = 20
 emoji_menu_enabled = false
 
 [node name="Credits Screen" type="TextureRect" parent="." unique_id=68548770]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("5_fcv5n")
@@ -183,7 +184,7 @@ text = "Jazz Cafe Music - Pixaby"
 [connection signal="pressed" from="Start Menu Screen/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Start Menu Screen/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Welcome Screen/Start Game" to="." method="_on_start_game_pressed"]
-[connection signal="text_submitted" from="Welcome Screen/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="text_changed" from="Welcome Screen/LineEdit" to="." method="_on_line_edit_text_changed"]
 [connection signal="pressed" from="Credits Screen/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Credits Screen/birbo link" to="Credits Screen" method="_on_birbo_link_pressed"]
 [connection signal="pressed" from="Credits Screen/birbo link2" to="Credits Screen" method="_on_birbo_link_2_pressed"]

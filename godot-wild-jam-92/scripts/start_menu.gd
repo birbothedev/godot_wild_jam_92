@@ -39,6 +39,5 @@ func _on_back_pressed() -> void:
 	start_screen.show()
 	welcome_screen.hide()
 
-func _on_line_edit_text_submitted(new_text: String) -> void:
+func _on_line_edit_text_changed(new_text: String) -> void:
 	GameManager.bar_name_input = new_text
-	print(new_text)

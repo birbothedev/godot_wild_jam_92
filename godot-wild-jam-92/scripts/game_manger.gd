@@ -12,11 +12,11 @@ var money_counter_label
 var blue_berry_count_label
 var red_berry_count_label
 
-var bar_reputation_value = 10
+var bar_reputation_value = 100
 var max_reputation = 100
-var bar_money_value = 50
+var bar_money_value = 0
 var player_berry_blue_count = 0
-var player_berry_red_count = 10
+var player_berry_red_count = 0
 
 var game_paused_for_buying = false
 var paused_for_timer = false

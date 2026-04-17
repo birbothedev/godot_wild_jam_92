@@ -34,6 +34,11 @@ window/stretch/mode="canvas_items"
 reg_patrons=""
 patrons=""
 berry_spawns=""
+patron_spawns=""
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
 
 [input]
 

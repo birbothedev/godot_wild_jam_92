@@ -33,7 +33,6 @@ func _on_berry_blue_timer_timeout() -> void:
 		var ber = berry_blue.instantiate()
 		ber.name = "Berry"
 		ber.global_position = chosen_spawn 
-		print(chosen_spawn)
 		ber.z_index = 0
 		handler.add_child(ber) 
 
